@@ -1,4 +1,12 @@
 {
 	"name": "entropy-web-dev",
-	"pages_build_output_dir": "./dist"
+	"pages_build_output_dir": "./dist",
+
+	"d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "entropy-web",
+      "database_id": "f5fb195a-1af5-4436-884d-392e05657758"
+    }
+  ]
 }
