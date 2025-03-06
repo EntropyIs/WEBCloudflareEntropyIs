@@ -1,10 +1,4 @@
 {
 	"name": "entropy-web-dev",
-	"pages_build_output_dir": "./dist",
-	"main": "src/index.ts",
-	"compatibility_date": "2025-03-03",
-	"observability": {
-		"enabled": true
-	},
-	"$schema": "node_modules/wrangler/config-schema.json"
+	"pages_build_output_dir": "./dist"
 }
