@@ -1,12 +1,14 @@
-import { jsxRenderer, useRequestContext } from "hono/jsx-renderer";
+import {} from "hono"
+import { jsxRenderer } from "hono/jsx-renderer";
 import { Footer } from "../componants/footer";
 
-export default jsxRenderer((children, title) => {
+export const renderer = jsxRenderer(({children, title}) => {
     return (
         <html>
             <head>
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel='icon' type="image/png" href="favicon.ico" />
                 <title>{title}</title>
             </head>
             <body>
