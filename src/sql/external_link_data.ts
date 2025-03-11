@@ -1,7 +1,7 @@
 export type ExternalLink = {
-    link_platform_name: string;
-    link_href: string;
-    link_icon_code: string;
+    platform_name: string;
+    href: string;
+    icon_code: string;
 }
 
 export const getDomainExternalLinks = async (db: D1Database, domain: string) => {

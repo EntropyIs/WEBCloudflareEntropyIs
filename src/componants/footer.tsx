@@ -8,12 +8,12 @@ export type FooterProps = {
 }
 
 const ExternalLinkCard: FC<{ external_link: ExternalLink }> = ({ external_link }) => {
-    const {link_platform_name, link_href, link_icon_code} = external_link
+    const {platform_name, href, icon_code} = external_link
     return (
         <li>
-            <a href={link_href}>
-                <i class={link_icon_code}></i>
-                {link_platform_name}
+            <a href={href}>
+                <i class={icon_code}></i>
+                {platform_name}
             </a>
         </li>
     )
@@ -32,8 +32,12 @@ export const Footer: FC<{props: FooterProps}> = async ({props}) => {
                 ))}
                 &copy; Copyright {(new Date()).getFullYear()}, Entropy Is Software Development. All rights reserved.
             </footer>
-        );
+        )
     } catch (e) {
-        return ( <footer> {e.message} </footer> )
+        return (
+            <footer>
+                &copy; Copyright {(new Date()).getFullYear()}, Entropy Is Software Development. All rights reserved.
+            </footer>
+        )
     }
 }
