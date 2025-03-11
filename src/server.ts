@@ -3,7 +3,7 @@ import { renderer } from "./routes/_renderer";
 import index from "./routes";
 import { Bindings } from "./global";
 
-import { getAllSites } from "./sql/site_data";
+import { getDomainExternalLinks } from "./sql/external_link_data";
 
 
 const app = new Hono<{Bindings: Bindings}>();
@@ -14,7 +14,7 @@ app.route('/', index)
 
 app.get("/query", async (c) => {
     try {
-      let sites= await getAllSites(c.env.DB)
+      let sites= await getDomainExternalLinks(c.env.DB, "entropyis")
       return c.json(sites);
     } catch (e) {
       return c.json({ err: e.message }, 500);
