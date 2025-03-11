@@ -4,16 +4,15 @@ declare module 'hono' {
     interface ContextRenderer {
         (
             conent: string | Promise<string>,
-            props: { title: string },
+            props: {
+                  db: D1Database
+                , domain: string
+                , title: string
+            }
         ): Response | Promise<Response>
     }
+}
 
-    interface Env {
-        Variables: {
-
-        };
-        Bindings: {
-            DB: D1Database;
-        }
-    }
+export type Bindings = {
+    DB: D1Database;
 }

@@ -1,14 +1,14 @@
-type Site = {
-    protocol: String;
-    sub_domain: String;
-    domain_name: String;
-    top_level_domain: String;
+export type Site = {
+    protocol: string;
+    sub_domain: string;
+    domain_name: string;
+    top_level_domain: string;
 }
 
 export const getAllSites = async (db: D1Database) => {
     const query = `
         SELECT
-              protocol,
+              protocol
             , sub_domain
             , domain_name
             , top_level_domain
@@ -22,10 +22,10 @@ export const getAllSites = async (db: D1Database) => {
     return sites
 }
 
-export const getDomainSites = async (db: D1Database, domain: String) => {
+export const getDomainSites = async (db: D1Database, domain: string) => {
     const query = `
         SELECT
-              protocol,
+              protocol
             , sub_domain
             , domain_name
             , top_level_domain
