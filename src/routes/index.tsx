@@ -16,7 +16,7 @@ index.get('/', async (c) => {
     )
   }
   catch (e) {
-    return c.json({err: "There is an error"}, 500);
+    return c.json({ err: e.message }, 500);
   }
 })
 

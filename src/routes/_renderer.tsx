@@ -1,9 +1,9 @@
 import {} from "hono"
-import { jsxRenderer } from "hono/jsx-renderer";
-import { Footer } from "../componants/footer";
-import { Context } from 'hono/jsx';
+import { jsxRenderer } from "hono/jsx-renderer"
+import { Footer, FooterProps } from "../componants/footer"
 
 export const renderer = jsxRenderer(({children, db, domain, title}) => {
+    const footer_props : FooterProps = { db, domain }
     return (
         <html>
             <head>
@@ -14,7 +14,7 @@ export const renderer = jsxRenderer(({children, db, domain, title}) => {
             </head>
             <body>
                 {children}
-                <Footer props={db, domain} />
+                <Footer props={footer_props} />
             </body>
         </html>
     )
